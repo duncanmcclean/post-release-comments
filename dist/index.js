@@ -8295,7 +8295,7 @@ exports.main = async function main() {
         references.forEach((reference) => {
             octokit.rest.issues.createComment({
                 owner: 'doublethreedigital',
-                repo: 'simple-commerce',
+                repo: 'gh-actions-release-workflow-test',
                 issue_number: reference.replace('#', ''),
                 body: `Released as part of ${version}. Hope you have a great rest of your day!`,
             })
