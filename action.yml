@@ -1,13 +1,18 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Post Release Comments'
+description: 'Identifies issues/pull requests from a Release Changelog and leaves a comment.'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  version:
+    description: 'Version of the Release'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  changelog:
+    description: 'Body of the Release Changelog'
+    required: true
+  gh_token:
+    description: 'GitHub Token: You can probably just do this... gh_token: ${{ secrets.GITHUB_TOKEN }}'
+    required: true
+# outputs:
+#   time: # output will be available to future steps
+#     description: 'The current time after waiting'
 runs:
   using: 'node12'
   main: 'dist/index.js'
