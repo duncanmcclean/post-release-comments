@@ -23,5 +23,5 @@ jobs:
     - uses: ./
       with:
         version: v1.0.0
-        changelog: Brand new feature #8
+        changelog: 'Brand new feature #8'
         myToken: ${{ secrets.GITHUB_TOKEN }}
