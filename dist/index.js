@@ -8289,19 +8289,19 @@ exports.main = async function main() {
         // const issueReferenceExpression = /(?:(?<![/\w-.])\w[\w-.]+?\/\w[\w-.]+?|\B)#[1-9]\d*?\b/g // This one supports things like: doublethreedigital/runway#641
         const issueReferenceExpression = /(?<![a-zA-Z])#[1-9]\d*?\b/g // Whereas, this just supports #641
 
-        core.info(changelogBody)
-        core.info(issueReferenceExpression)
-        core.info(changelogBody.match(issueReferenceExpression))
+        if (issueReferenceExpression === null) {
+            return core.warning(`No issue references were found in the provided changelog.`)
+        }
 
-        // changelogBody.match(issueReferenceExpression).forEach((reference) => {
-        //     octokit.rest.issues.createComment({
-        //         ...github.context.repo,
-        //         issue_number: reference.replace('#', ''),
-        //         body: `Released as part of [${version}](https://github.com/${github.context.repo.owner}/${github.context.repo.repo}/releases/tag/${version}).`,
-        //     })
-        // })
+        changelogBody.match(issueReferenceExpression).forEach((reference) => {
+            octokit.rest.issues.createComment({
+                ...github.context.repo,
+                issue_number: reference.replace('#', ''),
+                body: `Released as part of [${version}](https://github.com/${github.context.repo.owner}/${github.context.repo.repo}/releases/tag/${version}).`,
+            })
+        })
 
-        core.info("All Done!")
+        core.info(`All Done!`)
     } catch (error) {
         core.setFailed(error.message)
     }
