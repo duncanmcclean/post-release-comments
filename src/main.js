@@ -5,7 +5,7 @@ exports.main = async function main() {
     try {
         const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
 
-        const version = core.getInput('version')
+        const version = cleanupVersion(core.getInput('version'))
         const changelogBody = core.getInput('changelog')
 
         // const issueReferenceExpression = /(?:(?<![/\w-.])\w[\w-.]+?\/\w[\w-.]+?|\B)#[1-9]\d*?\b/g // This one supports things like: doublethreedigital/runway#641
@@ -27,4 +27,8 @@ exports.main = async function main() {
     } catch (error) {
         core.setFailed(error.message)
     }
+}
+
+function cleanupVersion(version) {
+    return version.replace(`refs/tags/`, ``)
 }
