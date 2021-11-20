@@ -7,9 +7,6 @@ inputs:
   changelog:
     description: 'Body of the Release Changelog'
     required: true
-  GITHUB_TOKEN:
-    description: comon please work and gimme the gh token
-    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
