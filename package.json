@@ -1,7 +1,7 @@
 {
-  "name": "javascript-action",
+  "name": "post-release-comments",
   "version": "1.0.2",
-  "description": "JavaScript Action Template",
+  "description": "Automates the process of commenting on issues/PRs when relates fixes have been released.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
+    "url": "git+https://github.com/duncanmcclean/post-release-comments.git"
   },
   "keywords": [
     "GitHub",
     "Actions",
-    "JavaScript"
+    "Release Workflow"
   ],
-  "author": "",
+  "author": "Duncan McClean",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/duncanmcclean/post-release-comments/issues"
   },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/duncanmcclean/post-release-comments#readme",
   "dependencies": {
     "@actions/core": "^1.2.5",
     "@actions/github": "^5.0.0"
