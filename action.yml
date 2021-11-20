@@ -7,9 +7,9 @@ inputs:
   changelog:
     description: 'Body of the Release Changelog'
     required: true
-  gh_token:
-    description: 'GitHub Token: You can probably just do this... gh_token: ${{ secrets.GITHUB_TOKEN }}'
-    required: true
+  # gh_token:
+  #   description: 'GitHub Token: You can probably just do this... gh_token: ${{ secrets.GITHUB_TOKEN }}'
+  #   required: true
 # outputs:
 #   time: # output will be available to future steps
 #     description: 'The current time after waiting'
