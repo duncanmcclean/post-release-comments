@@ -3,7 +3,7 @@ const github = require('@actions/github');
 
 exports.main = async function main() {
     try {
-        const octokit = github.getOctokit(core.getInput('myToken'))
+        const octokit = github.getOctokit(core.getInput('gh_token'))
 
         const version = core.getInput('version')
         const changelogBody = core.getInput('changelog')
