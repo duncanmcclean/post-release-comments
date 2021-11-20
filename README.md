@@ -1,7 +1,5 @@
 # Post Release Comments
 
-**This action is still a work in progress. I'm blocked right now on [an issue](https://github.com/actions/toolkit/issues/938), once I have that sorted, we should be all good!**
-
 A GitHub action to automate the process of commenting on issues/PRs when the related fix has been released.
 
 ## Example
@@ -18,7 +16,13 @@ This action assumes you keep a `CHANGELOG.md` and you have some way of getting t
 Anyways, this is how you'd implement this in an Actions workflow:
 
 ```yaml
-TODO
+- name: Comment on related issues
+  uses: duncanmcclean/post-release-comments@v1
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  with:
+    version: ${{ github.ref }}
+    changelog: ${{ steps.changelog.outputs.text }}
 ```
 
 ## Sponsor me!
