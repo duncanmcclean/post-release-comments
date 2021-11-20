@@ -1,5 +1,7 @@
 # Post Release Comments
 
+**This action is still a work in progress. I'm blocked right now on [an issue](https://github.com/actions/toolkit/issues/938), once I have that sorted, we should be all good!**
+
 A GitHub action to automate the process of commenting on issues/PRs when the related fix has been released.
 
 ## Example
