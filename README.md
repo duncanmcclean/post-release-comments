@@ -17,7 +17,7 @@ Anyways, this is how you'd implement this in an Actions workflow:
 
 ```yaml
 - name: Comment on related issues
-  uses: duncanmcclean/post-release-comments@v1.0.2
+  uses: duncanmcclean/post-release-comments@v1.0.3
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   with:
