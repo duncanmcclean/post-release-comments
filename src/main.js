@@ -3,9 +3,7 @@ const { GitHub } = require('@actions/github');
 
 exports.main = async function main() {
     try {
-        core.warning(process.env.GITHUB_TOKEN)
-
-        const octokit = new GitHub(process.env.GITHUB_TOKEN)
+        const octokit = new GitHub(core.getInput('myToken'))
 
         const version = core.getInput('version')
         const changelogBody = core.getInput('changelog')
@@ -14,6 +12,8 @@ exports.main = async function main() {
         const issueReferenceExpression = /(?<![a-zA-Z])#[1-9]\d*?\b/g // Whereas, this just supports #641
 
         let references = changelogBody.match(issueReferenceExpression)
+
+        // const context = github.context;
 
         references.forEach((reference) => {
             octokit.rest.issues.createComment({
