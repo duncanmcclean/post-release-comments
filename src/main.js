@@ -9,7 +9,7 @@ exports.main = async function main() {
         // const issueReferenceExpression = /(?:(?<![/\w-.])\w[\w-.]+?\/\w[\w-.]+?|\B)#[1-9]\d*?\b/g // This one supports things like: doublethreedigital/runway#641
         const issueReferenceExpression = /(?<![a-zA-Z])#[1-9]\d*?\b/g // Whereas, this just supports #641
 
-        const octokit = github.getOctokit(process.env.GITHUB_TOKE)
+        const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
 
         let references = changelogBody.match(issueReferenceExpression)
 
