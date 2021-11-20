@@ -1,5 +1,6 @@
 name: 'Post Release Comments'
-description: 'Identifies issues/pull requests from a Release Changelog and leaves a comment.'
+description: 'Automates the process of commenting on Issues/PRs when related fixes have been released.'
+author: 'Duncan McClean'
 inputs:
   version:
     description: 'Version of the Release'
@@ -10,4 +11,3 @@ inputs:
 runs:
   using: 'node12'
   main: 'dist/index.js'
-icon: :hash
