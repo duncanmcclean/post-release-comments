@@ -8277,31 +8277,27 @@ function wrappy (fn, cb) {
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 const core = __nccwpck_require__(2186)
-const github = __nccwpck_require__(5438)
+const { GitHub } = __nccwpck_require__(5438);
 
 exports.main = async function main() {
     try {
+        const octokit = new GitHub(core.getInput('myToken'))
+
         const version = core.getInput('version')
         const changelogBody = core.getInput('changelog')
-        const githubToken = core.getInput('gh_token')
 
         // const issueReferenceExpression = /(?:(?<![/\w-.])\w[\w-.]+?\/\w[\w-.]+?|\B)#[1-9]\d*?\b/g // This one supports things like: doublethreedigital/runway#641
         const issueReferenceExpression = /(?<![a-zA-Z])#[1-9]\d*?\b/g // Whereas, this just supports #641
 
-        const octokit = github.getOctokit(githubToken)
-
-        let references = changelogBody.match(issueReferenceExpression)
-
-        references.forEach((reference) => {
+        changelogBody.match(issueReferenceExpression).forEach((reference) => {
             octokit.rest.issues.createComment({
-                owner: 'doublethreedigital',
-                repo: 'gh-actions-release-workflow-test',
+                ...github.context.repo,
                 issue_number: reference.replace('#', ''),
-                body: `Released as part of ${version}. Hope you have a great rest of your day!`,
+                body: `Released as part of [${version}](https://github.com/${github.context.repo.owner}/${github.context.repo.repo}/releases/tag/${version}).`,
             })
         })
 
-        core.info("Done all the things by this point.")
+        core.info("All Done!")
     } catch (error) {
         core.setFailed(error.message)
     }

@@ -13,7 +13,7 @@ A GitHub action to automate the process of commenting on issues/PRs when the rel
 
 ## Usage
 
-This action assumes you keep a `CHANGELOG.md` and you have some way of getting the latest release from that changelog. I often use the [`statamic/changelog-action`](https://github.com/statamic/changelog-action) for this.
+This action assumes you keep a `CHANGELOG.md` and you have some way of getting the latest release from that changelog. I often use [`statamic/changelog-action`](https://github.com/statamic/changelog-action) for this.
 
 Anyways, this is how you'd implement this in an Actions workflow:
 
