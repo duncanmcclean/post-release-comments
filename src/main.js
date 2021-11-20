@@ -1,15 +1,17 @@
 const core = require('@actions/core')
-const github = require('@actions/github')
+const { GitHub } = require('@actions/github');
 
 exports.main = async function main() {
     try {
+        core.warning(process.env.GITHUB_TOKEN)
+
+        const octokit = new GitHub(process.env.GITHUB_TOKEN)
+
         const version = core.getInput('version')
         const changelogBody = core.getInput('changelog')
 
         // const issueReferenceExpression = /(?:(?<![/\w-.])\w[\w-.]+?\/\w[\w-.]+?|\B)#[1-9]\d*?\b/g // This one supports things like: doublethreedigital/runway#641
         const issueReferenceExpression = /(?<![a-zA-Z])#[1-9]\d*?\b/g // Whereas, this just supports #641
-
-        const octokit = github.getOctokit(core.getInput('GITHUB_TOKEN'))
 
         let references = changelogBody.match(issueReferenceExpression)
 
