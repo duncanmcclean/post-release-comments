@@ -1,9 +1,9 @@
 const core = require('@actions/core')
-const { GitHub } = require('@actions/github');
+const github = require('@actions/github');
 
 exports.main = async function main() {
     try {
-        const octokit = new GitHub(core.getInput('myToken'))
+        const octokit = github.getOctokit(core.getInput('myToken'))
 
         const version = core.getInput('version')
         const changelogBody = core.getInput('changelog')
