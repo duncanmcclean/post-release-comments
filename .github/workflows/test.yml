@@ -16,4 +16,4 @@ jobs:
       with:
         version: v1.0.0
         changelog: 'Brand new feature #8'
-        gh_token: ${{ secrets.GITHUB_TOKEN }}
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
