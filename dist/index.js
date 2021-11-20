@@ -8277,11 +8277,11 @@ function wrappy (fn, cb) {
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 const core = __nccwpck_require__(2186)
-const { GitHub } = __nccwpck_require__(5438);
+const github = __nccwpck_require__(5438);
 
 exports.main = async function main() {
     try {
-        const octokit = new GitHub(core.getInput('myToken'))
+        const octokit = github.getOctokit(core.getInput('myToken'))
 
         const version = core.getInput('version')
         const changelogBody = core.getInput('changelog')
