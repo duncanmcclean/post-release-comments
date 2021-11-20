@@ -7,7 +7,7 @@ inputs:
   changelog:
     description: 'Body of the Release Changelog'
     required: true
-  githubToken:
+  GITHUB_TOKEN:
     description: comon please work and gimme the gh token
     required: true
 runs:

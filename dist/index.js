@@ -8281,7 +8281,7 @@ const github = __nccwpck_require__(5438);
 
 exports.main = async function main() {
     try {
-        const octokit = github.getOctokit(core.getInput('githubToken'))
+        const octokit = github.getOctokit(core.getInput('GITHUB_TOKEN'))
 
         const version = core.getInput('version')
         const changelogBody = core.getInput('changelog')
