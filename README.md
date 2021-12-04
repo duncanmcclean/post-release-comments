@@ -1,6 +1,6 @@
 # Post Release Comments
 
-A GitHub action to automate the process of commenting on issues/PRs when the related fix has been released.
+A GitHub Action which comments on Issues and Pull Requests when they've been addresses within a release.
 
 ## Example
 
