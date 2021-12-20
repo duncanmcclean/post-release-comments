@@ -8293,13 +8293,17 @@ exports.main = async function main() {
             return core.warning(`No issue references were found in the provided changelog.`)
         }
 
-        changelogBody.match(issueReferenceExpression).forEach((reference) => {
-            octokit.rest.issues.createComment({
-                ...github.context.repo,
-                issue_number: reference.replace('#', ''),
-                body: `Released as part of [${version}](https://github.com/${github.context.repo.owner}/${github.context.repo.repo}/releases/tag/${version}).`,
+        let referenceMatches = changelogBody.match(issueReferenceExpression)
+
+        if (referenceMatches.length) {
+            referenceMatches.forEach((reference) => {
+                octokit.rest.issues.createComment({
+                    ...github.context.repo,
+                    issue_number: reference.replace('#', ''),
+                    body: `Released as part of [${version}](https://github.com/${github.context.repo.owner}/${github.context.repo.repo}/releases/tag/${version}).`,
+                })
             })
-        })
+        }
 
         core.info(`All Done!`)
     } catch (error) {
