@@ -1,6 +1,6 @@
 {
   "name": "post-release-comments",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Automates the process of commenting on issues/PRs when relates fixes have been released.",
   "main": "index.js",
   "scripts": {
