@@ -17,7 +17,7 @@ exports.main = async function main() {
 
         let referenceMatches = changelogBody.match(issueReferenceExpression)
 
-        if (referenceMatches.length) {
+        if (referenceMatches && referenceMatches.length) {
             referenceMatches.forEach((reference) => {
                 octokit.rest.issues.createComment({
                     ...github.context.repo,
