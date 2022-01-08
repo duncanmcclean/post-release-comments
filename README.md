@@ -36,7 +36,7 @@ If you use this Action in one of your workflows, I'd appreciate it if you could 
 ```
 npm run prepare
 git add dist
-git commit -m "v.x.x"
+git commit -m "v1.x.x"
 git push
 git tag v1.x.x
 git push --tags
