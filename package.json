@@ -26,7 +26,7 @@
   "homepage": "https://github.com/duncanmcclean/post-release-comments#readme",
   "dependencies": {
     "@actions/core": "^1.9.1",
-    "@actions/github": "^5.0.1"
+    "@actions/github": "^5.0.3"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.33.1",
