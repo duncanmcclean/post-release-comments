@@ -17,7 +17,7 @@ Anyways, this is how you'd implement this in an Actions workflow:
 
 ```yaml
 - name: Comment on related issues
-  uses: duncanmcclean/post-release-comments@v1.0.3
+  uses: duncanmcclean/post-release-comments@v1.0.6
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   with:
@@ -27,7 +27,7 @@ Anyways, this is how you'd implement this in an Actions workflow:
 
 ## Sponsor me!
 
-If you use this Action in one of your workflows, I'd appreciate it if you could [sponsor me](https://github.com/sponsors/duncanmcclean)! I build ad-hock things like this but I also [build addons](https://github.com/doublethreedigital) for a CMS called Statamic.
+If you use this Action in one of your workflows, I'd appreciate it if you'd consider [sponsoring me](https://github.com/sponsors/duncanmcclean). As well as building ad-hoc things like this, I also build a bunch of [addons](https://github.com/doublethreedigital) for a website CMS called Statamic.
 
 ## Notes to self
 
