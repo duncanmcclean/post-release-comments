@@ -27,7 +27,7 @@ Anyways, this is how you'd implement this in an Actions workflow:
 
 ## Sponsor me!
 
-If you use this Action in one of your workflows, I'd appreciate it if you'd consider [sponsoring me](https://github.com/sponsors/duncanmcclean). As well as building ad-hoc things like this, I also build a bunch of [addons](https://github.com/doublethreedigital) for a website CMS called Statamic.
+If you use this Action in one of your workflows, I'd appreciate it if you'd consider [sponsoring me](https://github.com/sponsors/duncanmcclean).
 
 ## Notes to self
 
