@@ -36,7 +36,7 @@ jobs:
 
       - name: Compare the expected and actual dist/ directories
         run: |
-          if ! diff --quiet --ignore-space-at-eol -- dist/; then
+          if ! git diff --quiet --ignore-space-at-eol -- dist/; then
             echo "Detected differences to the repository.  See status below:"
             git diff
             exit 1
